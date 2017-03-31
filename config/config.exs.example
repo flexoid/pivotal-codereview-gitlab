@@ -1,5 +1,7 @@
 use Mix.Config
 
+config :pivotal_codereview, port: 4000
+
 config :pivotal_codereview, pivotaltracker_token: "PIVOTAL_TRACKER_TOKEN"
 config :pivotal_codereview, pivotaltracker_project_id: "XXXXXXXXX"
 config :pivotal_codereview, pivotaltracker_label_name: "ON_CODE_REVIEW"
