@@ -7,13 +7,6 @@ defmodule PivotalCodereview.Tracker do
 
     HTTPoison.get!(url, headers(token)).body
     |> Poison.decode!
-
-    # [%{"created_at" => "2016-08-08T17:48:42Z", "id" => 16067795, "kind" => "label",
-    #    "name" => "control api", "project_id" => 526263,
-    #    "updated_at" => "2016-08-08T17:48:42Z"},
-    #  %{"created_at" => "2016-11-15T12:56:08Z", "id" => 16969787, "kind" => "label",
-    #    "name" => "v21", "project_id" => 526263,
-    #    "updated_at" => "2016-11-15T12:56:08Z"}]
   end
 
   def post_projects_stories_labels(token, project_id, story_id, params) do
@@ -22,10 +15,6 @@ defmodule PivotalCodereview.Tracker do
 
     HTTPoison.post!(url, body, post_headers(token)).body
     |> Poison.decode!
-
-    # %{"created_at" => "2016-09-05T13:20:00Z", "id" => 16354853, "kind" => "label",
-    #   "name" => "v20", "project_id" => 526263,
-    #   "updated_at" => "2016-09-05T13:20:00Z"}
   end
 
   def delete_projects_stories_labels(token, project_id, story_id, label_id) do
@@ -33,10 +22,6 @@ defmodule PivotalCodereview.Tracker do
 
     HTTPoison.delete!(url, post_headers(token)).body
     |> Poison.decode!
-
-    # %{"created_at" => "2016-09-05T13:20:00Z", "id" => 16354853, "kind" => "label",
-    #   "name" => "v20", "project_id" => 526263,
-    #   "updated_at" => "2016-09-05T13:20:00Z"}
   end
 
   defp full_url(url) do
