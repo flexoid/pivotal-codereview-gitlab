@@ -4,11 +4,13 @@ defmodule PivotalCodereview.Application do
   @moduledoc false
 
   use Application
+  require Logger
 
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
 
     port = Application.fetch_env!(:pivotal_codereview, :port)
+    Logger.info("Start listening port #{port}")
 
     # Define workers and child supervisors to be supervised
     children = [

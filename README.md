@@ -1,19 +1,24 @@
-# PivotalCodereview
+# Pivotal Tracker - Gitlab Code Review
 
-**TODO: Add description**
+**Code Review integration helper for Gitlab**
+
+Set specified label (default `on_code_review` ) to Pivotal Tracker when merge request is opened, and remove tag when request is marged or closed.
+
+Can be useful, as Pivotal Tracker stories cannot have any custom statuses between "started" and "finished", to mark that story are finished, but not merged in main branch yet.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `pivotal_codereview` to your list of dependencies in `mix.exs`:
+1. Install elixir lang
 
-```elixir
-def deps do
-  [{:pivotal_codereview, "~> 0.1.0"}]
-end
-```
+2. Prepare config:
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/pivotal_codereview](https://hexdocs.pm/pivotal_codereview).
+  ```
+  cp config/config.exs.example config/config.exs
+  vim config/config.exs
+  ```
 
+3. Run app:
+
+  ```
+  mix run --no-halt
+  ```
