@@ -8,25 +8,35 @@ Can be useful, as Pivotal Tracker stories cannot have any custom statuses betwee
 
 ## Installation
 
-1. Install elixir lang
+Firstly, prepare config:
 
-2. Prepare config:
+```
+cp config/config.exs.example config/config.exs
+vim config/config.exs
+```
 
-  ```
-  cp config/config.exs.example config/config.exs
-  vim config/config.exs
-  ```
+### Run on the local system
 
-3. Run app:
+Install elixir lang package and run:
 
-  ```
-  mix run --no-halt
-  ```
+```
+mix run --no-halt
+```
+
+### Run as docker image
+
+```
+docker build -t flexoid/pivotal-codereview .
+docker rm -f pivotal_codereview # in case of update
+docker run -p 4002:4000 --restart=unless-stopped -d --name=pivotal_codereview flexoid/pivotal-codereview
+```
+
+In this example, `4002` port will be exposed from the docker. Can be changed to any free port.
 
 ## Connecting to GitLab
 
 Add webhook URL on Integrations page in the GitLab project settings:
 
-    http://example.com:4000/merge_request/12345678
+    http://example.com:4002/merge_request/12345678
 
-where `example.com:4000` is your deployed service address, and `12345678` is a Pivotal Tracker project ID which you want to integrate with.
+where `example.com:4002` is your deployed service address, and `12345678` is a Pivotal Tracker project ID which you want to integrate with.
