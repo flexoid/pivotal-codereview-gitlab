@@ -22,3 +22,11 @@ Can be useful, as Pivotal Tracker stories cannot have any custom statuses betwee
   ```
   mix run --no-halt
   ```
+
+## Connecting to GitLab
+
+Add webhook URL on Integrations page in the GitLab project settings:
+
+    http://example.com:4000/merge_request/12345678
+
+where `example.com:4000` is your deployed service address, and `12345678` is a Pivotal Tracker project ID which you want to integrate with.
