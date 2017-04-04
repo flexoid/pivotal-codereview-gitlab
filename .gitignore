@@ -20,4 +20,7 @@ erl_crash.dump
 *.ez
 
 examples.json
-/config/config.exs
+
+/config/dev.exs
+/config/prod.exs
+/config/test.exs

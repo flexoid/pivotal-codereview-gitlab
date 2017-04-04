@@ -11,8 +11,8 @@ Can be useful, as Pivotal Tracker stories cannot have any custom statuses betwee
 Firstly, prepare config:
 
 ```
-cp config/config.exs.example config/config.exs
-vim config/config.exs
+cp config/prod.exs.example config/prod.exs
+vim config/prod.exs
 ```
 
 ### Run on the local system
@@ -20,6 +20,9 @@ vim config/config.exs
 Install elixir lang package and run:
 
 ```
+export MIX_ENV=prod
+
+mix compile
 mix run --no-halt
 ```
 
