@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/flexoid/pivotal-codereview-gitlab.svg?branch=master)](https://travis-ci.org/flexoid/pivotal-codereview-gitlab)
+
 # Pivotal Tracker - Gitlab Code Review
 
 **Code Review integration helper for Gitlab**
