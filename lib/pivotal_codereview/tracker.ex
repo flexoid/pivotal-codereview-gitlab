@@ -1,5 +1,5 @@
 defmodule PivotalCodereview.Tracker do
-  @endpoint "https://www.pivotaltracker.com/services/v5"
+  @endpoint Application.fetch_env!(:pivotal_codereview, :pivotaltracker_endpoint)
   @token_header "X-TrackerToken"
 
   def get_projects_stories_labels(token, project_id, story_id) do

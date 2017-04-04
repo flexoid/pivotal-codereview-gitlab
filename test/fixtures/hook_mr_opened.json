@@ -1,0 +1,106 @@
+{
+    "object_kind": "merge_request",
+    "user": {
+        "name": "Egor Lynko",
+        "username": "egor.lynko",
+        "avatar_url": "avatar.jpg"
+    },
+    "project": {
+        "name": "gitlab-test",
+        "description": "",
+        "web_url": "https://gitlab.example.com/egor.lynko/gitlab-test",
+        "avatar_url": null,
+        "git_ssh_url": "git@gitlab.example.com:egor.lynko/gitlab-test.git",
+        "git_http_url": "https://gitlab.example.com/egor.lynko/gitlab-test.git",
+        "namespace": "egor.lynko",
+        "visibility_level": 0,
+        "path_with_namespace": "egor.lynko/gitlab-test",
+        "default_branch": "master",
+        "homepage": "https://gitlab.example.com/egor.lynko/gitlab-test",
+        "url": "git@gitlab.example.com:egor.lynko/gitlab-test.git",
+        "ssh_url": "git@gitlab.example.com:egor.lynko/gitlab-test.git",
+        "http_url": "https://gitlab.example.com/egor.lynko/gitlab-test.git"
+    },
+    "object_attributes": {
+        "id": 507,
+        "target_branch": "master",
+        "source_branch": "feature/98765/some-commit",
+        "source_project_id": 403,
+        "author_id": 15,
+        "assignee_id": null,
+        "title": "Master",
+        "created_at": "2017-03-31 19:20:23 UTC",
+        "updated_at": "2017-03-31 19:20:23 UTC",
+        "milestone_id": null,
+        "state": "opened",
+        "merge_status": "unchecked",
+        "target_project_id": 403,
+        "iid": 1,
+        "description": "",
+        "position": 0,
+        "locked_at": null,
+        "updated_by_id": null,
+        "merge_error": null,
+        "merge_params": {
+            "force_remove_source_branch": null
+        },
+        "merge_when_build_succeeds": false,
+        "merge_user_id": null,
+        "merge_commit_sha": null,
+        "deleted_at": null,
+        "in_progress_merge_commit_sha": null,
+        "lock_version": null,
+        "time_estimate": 0,
+        "source": {
+            "name": "gitlab-test",
+            "description": "",
+            "web_url": "https://gitlab.example.com/egor.lynko/gitlab-test",
+            "avatar_url": null,
+            "git_ssh_url": "git@gitlab.example.com:egor.lynko/gitlab-test.git",
+            "git_http_url": "https://gitlab.example.com/egor.lynko/gitlab-test.git",
+            "namespace": "egor.lynko",
+            "visibility_level": 0,
+            "path_with_namespace": "egor.lynko/gitlab-test",
+            "default_branch": "master",
+            "homepage": "https://gitlab.example.com/egor.lynko/gitlab-test",
+            "url": "git@gitlab.example.com:egor.lynko/gitlab-test.git",
+            "ssh_url": "git@gitlab.example.com:egor.lynko/gitlab-test.git",
+            "http_url": "https://gitlab.example.com/egor.lynko/gitlab-test.git"
+        },
+        "target": {
+            "name": "gitlab-test",
+            "description": "",
+            "web_url": "https://gitlab.example.com/egor.lynko/gitlab-test",
+            "avatar_url": null,
+            "git_ssh_url": "git@gitlab.example.com:egor.lynko/gitlab-test.git",
+            "git_http_url": "https://gitlab.example.com/egor.lynko/gitlab-test.git",
+            "namespace": "egor.lynko",
+            "visibility_level": 0,
+            "path_with_namespace": "egor.lynko/gitlab-test",
+            "default_branch": "master",
+            "homepage": "https://gitlab.example.com/egor.lynko/gitlab-test",
+            "url": "git@gitlab.example.com:egor.lynko/gitlab-test.git",
+            "ssh_url": "git@gitlab.example.com:egor.lynko/gitlab-test.git",
+            "http_url": "https://gitlab.example.com/egor.lynko/gitlab-test.git"
+        },
+        "last_commit": {
+            "id": "5d5153b8fe3649d03d9542d9dad8f0155bfd84f2",
+            "message": "add README\n",
+            "timestamp": "2017-03-31T22:09:23+03:00",
+            "url": "https://gitlab.example.com/egor.lynko/gitlab-test/commit/5d5153b8fe3649d03d9542d9dad8f0155bfd84f2",
+            "author": {
+                "name": "Egor Lynko",
+                "email": "egor.lynko@example.com"
+            }
+        },
+        "work_in_progress": false,
+        "url": "https://gitlab.example.com/egor.lynko/gitlab-test/merge_requests/1",
+        "action": "open"
+    },
+    "repository": {
+        "name": "gitlab-test",
+        "url": "git@gitlab.example.com:egor.lynko/gitlab-test.git",
+        "description": "",
+        "homepage": "https://gitlab.example.com/egor.lynko/gitlab-test"
+    }
+}

@@ -3,5 +3,9 @@ use Mix.Config
 # Do not start endpoint in tests
 # config :pivotal_codereview, port: 4000
 
+config :pivotal_codereview, pivotaltracker_endpoint: "http://localhost:40028"
 config :pivotal_codereview, pivotaltracker_token: "PIVOTAL_TOKEN"
 config :pivotal_codereview, pivotaltracker_label_name: "on_code_review"
+
+# Print only warnings and errors during test
+config :logger, level: :warn

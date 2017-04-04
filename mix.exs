@@ -34,6 +34,7 @@ defmodule PivotalCodereview.Mixfile do
       {:httpoison, "~> 0.11.1"},
       {:plug, "~> 1.3"},
       {:poison, "~> 3.1"},
+      {:bypass, "~> 0.6", only: :test},
     ]
   end
 end
