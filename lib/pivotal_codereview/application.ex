@@ -9,7 +9,8 @@ defmodule PivotalCodereview.Application do
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
 
-    children = endpoint_children()
+    children = endpoint_children() ++
+      [worker(PivotalCodereview.LabelActionSupervisor, [])]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options

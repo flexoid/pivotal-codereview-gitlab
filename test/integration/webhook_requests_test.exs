@@ -8,6 +8,18 @@ defmodule PivotalCodereview.WebhookRequestsTest do
   @project_id 123
   @label_id 8123982132
 
+  defp wait_for_children(supervisor, max_milliseconds \\ 2000)
+  defp wait_for_children(_supervisor, 0), do: nil
+  defp wait_for_children(supervisor, max_milliseconds) do
+    case Supervisor.count_children(supervisor) do
+      %{active: 0} ->
+        nil
+      _ ->
+        Process.sleep(1)
+        wait_for_children(supervisor, max_milliseconds - 1)
+    end
+  end
+
   setup do
     bypass = Bypass.open(port: 40028)
     ets_table = :ets.new(:bypass_control, [:set, :public])
@@ -39,6 +51,8 @@ defmodule PivotalCodereview.WebhookRequestsTest do
     conn(:post, "/merge_request/#{@project_id}", Poison.encode!(body))
     |> put_req_header("content-type", "application/json")
     |> WebhookEndpoint.call(@opts)
+
+    wait_for_children(PivotalCodereview.LabelActionSupervisor)
   end
 
   test "removes tag when merge request is merged", %{bypass: bypass, ets_table: ets_table} do
@@ -81,6 +95,8 @@ defmodule PivotalCodereview.WebhookRequestsTest do
     conn(:post, "/merge_request/123", Poison.encode!(body))
     |> put_req_header("content-type", "application/json")
     |> WebhookEndpoint.call(@opts)
+
+    wait_for_children(PivotalCodereview.LabelActionSupervisor)
 
     assert [{"received_GET", true}] == :ets.lookup(ets_table, "received_GET")
     assert [{"received_DELETE", true}] == :ets.lookup(ets_table, "received_DELETE")
@@ -126,6 +142,8 @@ defmodule PivotalCodereview.WebhookRequestsTest do
     conn(:post, "/merge_request/123", Poison.encode!(body))
     |> put_req_header("content-type", "application/json")
     |> WebhookEndpoint.call(@opts)
+
+    wait_for_children(PivotalCodereview.LabelActionSupervisor)
 
     assert [{"received_GET", true}] == :ets.lookup(ets_table, "received_GET")
     assert [{"received_DELETE", true}] == :ets.lookup(ets_table, "received_DELETE")
