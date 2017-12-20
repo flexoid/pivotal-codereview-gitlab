@@ -1,0 +1,22 @@
+pipeline:
+  test:
+    image: elixir:1.4.2
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    commands:
+      - export MIX_ENV=test
+      - cp config/test.exs.example config/test.exs
+      - mix local.hex --force
+      - mix local.rebar --force
+      - mix deps.get
+      - mix test
+
+  deploy:
+    image: michalpodeszwa/docker-compose:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    commands:
+      - ./deploy/docker-deploy.sh
+    secrets:
+      - pivotaltracker_secret_token
+      - pivotaltracker_label_name
